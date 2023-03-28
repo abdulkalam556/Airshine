@@ -84,7 +84,7 @@ nav {
 }
 
 .content {
-  width: 100vw;
+  /* width: 100%; */
   background-image: url('./assests/body-background.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -332,7 +332,7 @@ section.contentP .head {
 }
 
 footer {
-  width: 100vw;
+  /* width: 100vw; */
   display: flex;
   flex-direction: column;
   align-items: center;
