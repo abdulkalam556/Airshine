@@ -144,7 +144,7 @@ nav {
   background-image: url('./assests/body-background.png');
   background-repeat: no-repeat;
   background-size: cover;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 .chat-right {
