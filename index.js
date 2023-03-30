@@ -1,4 +1,4 @@
-console.log('started')
+console.log('started index')
 
 var hamberg = document.querySelectorAll('.n-button')
 hamberg.forEach((ham) => {
@@ -9,6 +9,14 @@ hamberg.forEach((ham) => {
     })
     document.querySelector('.n-menu-mobile').classList.toggle('active')
   })
+})
+
+var logo = document.querySelector('.n-logo')
+logo.addEventListener('click', () => {
+  console.log('logo click')
+  const { origin } = window.location
+  window.location.href = origin
+  console.log(origin)
 })
 
 // handle menu more section

@@ -15,9 +15,15 @@
       href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@400;600&display=swap"
       rel="stylesheet"
     />
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script src="./routes.js" defer></script>
+    <script src="./routes.js" type="text/javascript" defer></script>
 
     <title>Airshine Hotels</title>
   </head>
@@ -107,7 +113,10 @@
               leo molestie vel, ornare non id blandit netus.
             </div>
 
-            <form action="" class="f-c-form">
+            <form
+              class="f-c-form"
+              onsubmit="sendEmail(); reset(); return false;"
+            >
               <div class="input-box w100">
                 <input type="text" name="" id="f-c-form-name" required />
                 <span>Contact name</span>
@@ -239,5 +248,36 @@
         </div>
       </div>
     </div>
+
+    <script>
+      function sendEmail() {
+        console.log('EMail')
+        Email.send({
+          Host: 'smtp.elasticemail.com',
+          Username: 'abdulkalams2015@gmail.com',
+          Password: '43DE2981C81FC5790178D8C98E3F831B9C6F',
+          To: 'sabdul@student.nitw.ac.in',
+          From: 'abdulkalams2015@gmail.com',
+          Subject: 'New contact form Enquiry',
+          Body:
+            'name: ' +
+            document.querySelector('#f-c-form-name').value +
+            '<br> street: ' +
+            document.querySelector('#f-c-form-street').value +
+            '<br> city: ' +
+            document.querySelector('#f-c-form-City').value +
+            '<br> post: ' +
+            document.querySelector('#f-c-form-Post').value +
+            '<br> contact: ' +
+            document.querySelector('#f-c-form-contact').value +
+            '<br> email: ' +
+            document.querySelector('#f-c-form-email').value +
+            '<br> idea: ' +
+            document.querySelector('#f-c-form-idea').value +
+            '<br> page: ' +
+            'Hotels',
+        }).then((message) => alert(message))
+      }
+    </script>
   </body>
 </html>
